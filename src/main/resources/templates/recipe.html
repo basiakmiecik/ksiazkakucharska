@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity=
+            "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Szczegóły przepisu</title>
+</head>
+<body>
+<h1 th:text="|${recipe.getName()}|">Nazwa</h1>
+<h3 th:text="|Rodzaj:${recipe.getKind()}|">rodzaj</h3>
+<h4>
+    <button type="submit">
+<a th:href="@{|/|}"
+       th:text="|Wróć do strony głownej|"></a>
+    </button>
+</h4>
+<img th:src="@{${recipe.image}}"/>
+<h4 th:text="|Popularność: ${recipe.popularity}|"></h4>
+
+<button type="submit" class="btn btn-success" name="button" id="1"
+        th:value="${recipe.setPopularity(recipe.getPopularity()+1)}">Podoba mi się!</button>
+<!--
+<button type="submit" class="btn btn-danger" name="button2" id="2"
+        th:value="${recipe.setPopularity(recipe.getPopularity()-1)}">Nie podoba mi się!</button>
+
+-->
+
+
+<h4 th:text="|Trudność: ${recipe.hardLevel}|"></h4>
+
+
+<h4 th:text="|Czas gotowania: ${recipe.timecooking}|"></h4>
+<h4 th:text="|Opis|"></h4>
+<h4 th:text="|${recipe.description}|"></h4>
+
+
+
+</body>
+</html>

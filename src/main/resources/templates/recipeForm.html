@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity=
+            "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Dodaj przepis</title>
+</head>
+<body>
+<form action="/saveRecipe" method="post">
+    <div class="col-6">
+    <div class="form-group">
+        <label for="name">Nazwa przepisu</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Nazwa">
+    </div>
+    <div class="form-group">
+        <label for="timecooking">Czas gotowania</label>
+        <input type="text" class="form-control" name="timecooking"  id="timecooking" placeholder="Czas gotowania">
+    </div>
+    <div class="form-group">
+        <label for="image">Link do zdjęcia</label>
+        <input type="text" class="form-control" name="image"  id="image" placeholder="Link do zdjęcia">
+    </div>
+    <div class="form-group">
+        <label for="hardLevel">Poziom trudności</label>
+        <select class="form-control" name= "hardLevel" id="hardLevel">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="kind">Typ dania: </label>
+        <select multiple class="form-control" name="kind" id="kind">
+            <option>mięsne</option>
+            <option>wegetariańskie</option>
+            <option>rybne</option>
+            <option>deser</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="description">Opis przepisu</label>
+        <textarea class="form-control" name="description" id="description" rows="6"></textarea>
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Dodaj</button>
+</form>
+</body>
+</html>

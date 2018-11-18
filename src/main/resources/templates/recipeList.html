@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity=
+            "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Lista Przepisów</title>
+</head>
+<body>
+
+
+<img th:src="@{home.png}"
+     width="25%" height="25%" align="center"/>
+
+<table th:margin-left="auto" th:margin-right="auto">
+    <thead>
+    <tr>
+        <th>Nazwa</th>
+        <th>Czas gotowania [min]</th>
+        <th>Popularność</th>
+        <th>Trudność [1- łatwy, 5-trudny]</th>
+    </tr>
+    </thead>
+    <tr th:each="recipe:${recipeList}">
+        <th><a th:href="@{|/recipe?id=${recipe.id}|}" th:text="|${recipe.name}|"></a></th>
+        <th><a th:text="|${recipe.timecooking}|"></a>
+        <th><a th:text="|${recipe.popularity}|"></a>
+        <th><a th:text="|${recipe.hardLevel}|"></a>
+</table>
+
+<button type="submit">
+        <a th:href="@{|/sortH|}">Sortowanie po trudności</a>
+</button>
+
+<button type="submit"><a th:href="@{|/sortT|}">Sortowanie po czasie</a></button>
+
+<h1> </h1>
+
+<button type="submit"><a th:href="@{/dodaj}" th:text="|Dodaj przepis|"></a></button>
+
+
+</h4>
+
+</body>
+</html>
